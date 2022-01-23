@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foregroundTint="@color/white"
+        android:backgroundTint="@color/white"
+        android:foregroundTintMode="multiply"
+        android:background="@color/transparent"
+        app:menu="@menu/bottom_app_bar_menu_left" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

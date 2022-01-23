@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.book.AddBookFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addImage"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/roundcornershapebackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/add"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_noun_add_image_2413564"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="Add title \n image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addMoreImages"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/roundcornershapebackground"
+        app:layout_constraintStart_toEndOf="@id/addImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/addMore"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_noun_add_image_2413564"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="Add more \n images"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addMore" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <EditText
+        android:id="@+id/short_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@id/addImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:hint="@string/title_of_the_book"
+        android:background="@drawable/roundcornershapebackground"
+        app:layout_constraintTop_toBottomOf="@id/addImage"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        />
+
+    <EditText
+        android:id="@+id/author"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@id/addImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:hint="@string/author"
+        android:background="@drawable/roundcornershapebackground"
+        app:layout_constraintTop_toBottomOf="@id/short_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        />
+    <EditText
+        android:id="@+id/publisher"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@id/addImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:hint="@string/publisher"
+        android:background="@drawable/roundcornershapebackground"
+        app:layout_constraintTop_toBottomOf="@id/author"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:gravity="top"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="@id/addImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:hint="@string/dummy_description"
+        android:background="@drawable/roundcornershapebackground"
+        app:layout_constraintTop_toBottomOf="@id/publisher"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/uploadBookButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EE5959"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="25dp"
+        android:text="@string/upload"
+        app:cornerRadius="25dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.HomeFragment">
+
+ <SearchView
+     android:id="@+id/search_view"
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:iconifiedByDefault="false"
+     android:elevation="10dp"
+     android:queryBackground="@android:color/transparent"
+     app:layout_constraintWidth_percent="0.95"
+     android:layout_marginTop="25dp"
+     android:background="@drawable/edit_text_background"
+     android:queryHint="Search Books near you"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toTopOf="parent"
+     />
+
+    <ImageView
+        android:id="@+id/location_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/user_location_picker"
+        android:src="@drawable/ic_baseline_my_location_24"
+        app:layout_constraintStart_toStartOf="@id/search_view"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+        />
+    <TextView
+        android:id="@+id/current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_user_loaction"
+        android:textStyle="bold"
+        android:textColor="@color/appColor"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/location_icon"
+        app:layout_constraintTop_toTopOf="@id/location_icon"
+        app:layout_constraintBottom_toBottomOf="@id/location_icon"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.95"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="50dp"
+        tools:listitem="@layout/book_layout"
+        tools:itemCount="5"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/current_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/bottom_ui"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            android:nestedScrollingEnabled="false"
+            android:isScrollContainer="false"
+            android:layout_height="50dp"
+            app:fabCradleMargin="10dp"
+           />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="50dp"
+            app:itemIconTint="@color/appColor"
+            app:itemTextColor="@color/appColor"
+            app:elevation="0dp"
+            app:itemRippleColor="@android:color/transparent"
+            android:outlineSpotShadowColor="@color/transparent"
+            app:backgroundTint="@android:color/transparent"
+            app:menu="@menu/bottom_app_bar_menu_left"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/add_new_book"
+            android:src="@drawable/book_icon"
+            app:backgroundTint="@color/appColor"
+            app:layout_anchor="@+id/bottomAppBar"
+            app:layout_anchorGravity="bottom|center" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
